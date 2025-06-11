@@ -1,3 +1,5 @@
 .env
+.git
 .idea
 __pycache__
+.gitattributes
