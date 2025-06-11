@@ -100,7 +100,7 @@ class CustomChatLLM(LLM):
         return "custom_chat_llm"
 
 # Configuration - Use environment variable or fallback to hardcoded token
-BEARER_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im1hZGhhbjQwOTBAZ21haWwuY29tIn0.o1PucTNXmVnUtAn7RBbWg96sLrGa8_fA4V6FQ8-ZyKo"
+BEARER_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im1hZGhhbmtydGhpa0BnbWFpbC5jb20ifQ.ko-Vbxf1Bc9WaDxUvr7CdcRdzh-RGroru_t8LmE02eA"
 
 if not BEARER_TOKEN:
     raise ValueError("Please set AIPIPE_BEARER_TOKEN environment variable")

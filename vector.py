@@ -65,7 +65,7 @@ class CustomEmbeddings(Embeddings):
         return self.embed_documents([text])[0]
 
 # Configuration - set your bearer token here
-BEARER_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IjIzZjMwMDE2NDZAZHMuc3R1ZHkuaWl0bS5hYy5pbiJ9.M8zMXIxTHMjOL9vmzn41xrEaOi1XM8rgpRY_--NmK50" # Set this environment variable
+BEARER_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im1hZGhhbmtydGhpa0BnbWFpbC5jb20ifQ.ko-Vbxf1Bc9WaDxUvr7CdcRdzh-RGroru_t8LmE02eA" # Set this environment variable
 if not BEARER_TOKEN:
     raise ValueError("Please set AIPIPE_BEARER_TOKEN environment variable")
 
