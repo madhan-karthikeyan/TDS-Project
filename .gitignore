@@ -3,3 +3,6 @@
 .idea
 __pycache__
 .gitattributes
+markdown_files/
+downloaded_threads/
+promptfoo.yaml
