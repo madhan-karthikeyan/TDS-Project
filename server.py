@@ -15,6 +15,11 @@ from langchain.embeddings.base import Embeddings
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 from langchain.llms.base import LLM
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 class CustomEmbeddings(Embeddings):
     def __init__(self, api_url: str, bearer_token: str, model: str = "text-embedding-ada-002"):
@@ -100,7 +105,9 @@ class CustomChatLLM(LLM):
         return "custom_chat_llm"
 
 # Configuration - Use environment variable or fallback to hardcoded token
-BEARER_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im1hZGhhbmtydGhpa0BnbWFpbC5jb20ifQ.ko-Vbxf1Bc9WaDxUvr7CdcRdzh-RGroru_t8LmE02eA"
+BEARER_TOKEN = os.getenv("OPENAI_API_KEY")
+if not BEARER_TOKEN:
+    raise ValueError("BEARER_TOKEN environment variable not set")
 
 if not BEARER_TOKEN:
     raise ValueError("Please set AIPIPE_BEARER_TOKEN environment variable")
@@ -317,7 +324,7 @@ async def get_answer(query_request: QueryRequest):
         ➤ Convert to percentage out of 100 and apply bonus accordingly (e.g., 10/10 with bonus = 110)
         - If the answer requires referencing models, tools (e.g., Docker), scoring rules, or exams, base your answer strictly on what is stated in the context
         - If the answer is not clearly found in the provided context, say: **"I don't know based on the course content."**
-        - NEVER guess or infer beyond what’s in the context
+        - NEVER guess or infer beyond what's in the context
         - DO NOT include URLs in the answer
         - Keep the answer brief, direct, and factually correct
 

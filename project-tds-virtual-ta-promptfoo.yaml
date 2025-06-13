@@ -3,7 +3,7 @@ description: "TDS Virtual TA Project Sample (but not the actual evaluation) Ques
 providers:
   - id: https
     config:
-      url: http://localhost:8000/api/
+      url: http://127.0.0.1:8000/api
       method: POST
       headers:
         Content-Type: application/json
@@ -74,7 +74,7 @@ tests:
         transform: output.answer
         value: don't know
 
-writeLatestResults: true
+# writeLatestResults: true
 
-commandLineOptions:
-  cache: false
+# commandLineOptions:
+#   cache: false
